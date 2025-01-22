@@ -1,6 +1,7 @@
 package com.business.project.project03.bo;
 
-import lk.ijse.gdse.project.bo.custom.impl.CustomerBOImpl;
+
+import com.business.project.project03.bo.custom.impl.CustomerBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;

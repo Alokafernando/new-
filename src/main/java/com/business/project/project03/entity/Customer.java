@@ -3,6 +3,7 @@ package com.business.project.project03.entity;
 import java.io.Serializable;
 
 public class Customer implements Serializable {
+
     private String cust_ID;
     private String name;
     private String address;

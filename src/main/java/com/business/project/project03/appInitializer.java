@@ -2,7 +2,9 @@ package com.business.project.project03;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,10 +12,14 @@ import java.io.IOException;
 public class appInitializer extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(appInitializer.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Parent load = FXMLLoader.load(getClass().getResource("/view/Welcome.fxml"));
+        Scene scene = new Scene(load);
         stage.setScene(scene);
+        stage.setTitle("Auto Lanka (PVT) LTD");
+
+        Image image = new Image(getClass().getResourceAsStream("/image/car-logo-illustration_910054-55266.jpg"));
+        stage.getIcons().add(image);
+
         stage.show();
     }
 

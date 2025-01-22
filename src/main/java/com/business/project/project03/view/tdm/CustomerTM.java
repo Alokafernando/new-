@@ -10,16 +10,26 @@ public class CustomerTM implements Comparable<CustomerTM>{
 
     public CustomerTM() {}
 
-    public CustomerTM(String cust_ID, String name, String address, String contact, String email) {}
+    public CustomerTM(String cust_ID, String name, String address, String contact, String email) {
+        this.cust_ID = cust_ID;
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+        this.email = email;
+    }
 
     public String getCust_ID() {return cust_ID;}
     public void setCust_ID(String cust_ID) {this.cust_ID = cust_ID;}
+
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
+
     public String getAddress() {return address;}
     public void setAddress(String address) {this.address = address;}
+
     public String getContact() {return contact;}
     public void setContact(String contact) {this.contact = contact;}
+
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}
 
@@ -37,6 +47,6 @@ public class CustomerTM implements Comparable<CustomerTM>{
 
     @Override
     public int compareTo(CustomerTM o) {
-        return 0;
+        return cust_ID.compareTo(o.getCust_ID());
     }
 }

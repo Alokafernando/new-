@@ -1,6 +1,7 @@
 package com.business.project.project03.dao;
 
-import lk.ijse.gdse.project.dao.custom.impl.CustomerDAOImpl;
+
+import com.business.project.project03.dao.custom.impl.CustomerDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;

@@ -1,8 +1,8 @@
 package com.business.project.project03.dao.custom.impl;
 
-import lk.ijse.gdse.project.dao.SQLUtil;
-import lk.ijse.gdse.project.dao.custom.CustomerDAO;
-import lk.ijse.gdse.project.entity.Customer;
+import com.business.project.project03.dao.SQLUtil;
+import com.business.project.project03.dao.custom.CustomerDAO;
+import com.business.project.project03.entity.Customer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,10 +23,10 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public void save(Customer dto) throws SQLException, ClassNotFoundException {
+    public boolean save(Customer dto) throws SQLException, ClassNotFoundException {
         SQLUtil.execute("insert into customer values(?, ?, ?, ?, ?)",
                 dto.getCust_ID(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getEmail());
-
+        return false;
     }
 
     @Override
@@ -55,6 +55,10 @@ public class CustomerDAOImpl implements CustomerDAO {
         return "C001";
     }
 
+    @Override
+    public void generateReport() throws SQLException, ClassNotFoundException {
+
+    }
 
 
 }

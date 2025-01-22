@@ -1,6 +1,6 @@
 package com.business.project.project03.dao;
 
-import lk.ijse.gdse.project.db.DBConnection;
+import com.business.project.project03.db.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
