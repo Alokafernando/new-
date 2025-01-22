@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="860.0" style="-fx-background-color: #dcdde1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.project.controller_old.SupplyDetailsController">
+   <children>
+      <VBox layoutX="30.0" layoutY="1.0" prefHeight="650.0" prefWidth="800.0" spacing="30.0">
+         <children>
+            <VBox prefHeight="270.0" prefWidth="800.0" spacing="20.0">
+               <children>
+                  <HBox prefHeight="35.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="30.0" />
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="350.0" spacing="30.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="173.0" text="Order Supply Date">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSupplyDate" prefWidth="276.0" style="-fx-border-width: 0 0 1 0;" text="2049/01/01" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="200.0" spacing="30.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #000;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="20.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="111.0" text="Supplier ID">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cmbSupplierID" onAction="#cmbSupplierIdOnAction" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #1e3799; -fx-border-width: 0 0 1 0;" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="350.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="212.0" text="Supplier Name">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSupplierName" prefWidth="276.0" text="name">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="35.0" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="30.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="99.0" text="Part ID">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cmbPartID" onAction="#cmbPartIdOnAction" prefWidth="150.0" style="-fx-border-width: 0 0 1 0; -fx-border-color: #1e3799; -fx-background-color: transparent;" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="350.0" spacing="30.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="173.0" text="Part Name">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPartName" prefWidth="276.0" text="name">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="120.0" prefHeight="35.0" prefWidth="800.0" spacing="30.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="20.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="110.0" text="Quantity on Hand">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblQOnHand" alignment="CENTER" prefWidth="80.0" text="0">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="350.0" spacing="30.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="173.0" text="unit price">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblUnitPrice" prefWidth="276.0" text="name">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="176.0" prefHeight="35.0" prefWidth="800.0" spacing="30.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="352.0" spacing="30.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="99.0" text="Qty">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="lblQty" promptText="0" style="-fx-background-color: transparent; -fx-border-color: #1e3799; -fx-border-width: 0 0 1 0;">
+                                 <font>
+                                    <Font name="Calibri" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="350.0" spacing="30.0">
+                           <children>
+                              <Button fx:id="btnCart" mnemonicParsing="false" onAction="#cartButtonOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #718093;" text="Add to Cart">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="CLOSED_HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="tblSupplyDetails" prefHeight="251.0" prefWidth="800.0">
+              <columns>
+                <TableColumn fx:id="colPartID" prefWidth="94.39999580383301" text="Part Id" />
+                <TableColumn fx:id="colName" prefWidth="117.60002899169922" text="Name" />
+                  <TableColumn fx:id="colQuantity" prefWidth="159.199951171875" text="Cart Quantity" />
+                  <TableColumn fx:id="colUnitPrice" prefWidth="147.99996948242188" text="Unit price" />
+                  <TableColumn fx:id="colTotal" prefWidth="152.800048828125" text="Total" />
+                  <TableColumn fx:id="colAction" prefWidth="132.0" text="Action" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#onResetButtonClicked" prefHeight="30.0" prefWidth="350.0" style="-fx-background-color: #718093;" text="reset">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnPlaceOrder" mnemonicParsing="false" onAction="#actionOnPlaceorderButton" prefHeight="30.0" prefWidth="350.0" style="-fx-background-color: #718093;" text="Place order">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
