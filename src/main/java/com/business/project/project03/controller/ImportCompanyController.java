@@ -1,10 +1,11 @@
 package com.business.project.project03.controller;
 
 import com.business.project.project03.bo.BOFactory;
-import com.business.project.project03.bo.custom.ExportCompanyBO;
+import com.business.project.project03.bo.custom.ImportCompanyBO;
 import com.business.project.project03.db.DBConnection;
 import com.business.project.project03.model.ExportCompanyDTO;
-import com.business.project.project03.view.tdm.ExportCompanyTM;
+import com.business.project.project03.model.ImportCompanyDTO;
+import com.business.project.project03.view.tdm.ImportCompanyTM;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,44 +21,43 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
-public class ExportCompanyController implements Initializable {
-
-
-    @FXML
-    private Button btnDeleteExport;
+public class ImportCompanyController implements Initializable {
 
     @FXML
-    private Button btnExportCompanyRepo;
+    private Button btnDeleteImport;
 
     @FXML
-    private Button btnExportVehicleRepo;
+    private Button btnImportCompanyRepo;
 
     @FXML
-    private Button btnSaveExport;
+    private Button btnImportVehicleRepo;
 
     @FXML
-    private Button btnUpdateExport;
+    private Button btnSaveImport;
 
     @FXML
-    private TableColumn<ExportCompanyTM, String> colCOmpanyName;
+    private Button btnUpdateImport;
 
     @FXML
-    private TableColumn<ExportCompanyTM, String> colCompanyID;
+    private TableColumn<ImportCompanyTM, String> colCompanyID;
 
     @FXML
-    private TableColumn<ExportCompanyTM, String> colContact;
+    private TableColumn<ImportCompanyTM, String> colCompanyName;
 
     @FXML
-    private TableColumn<ExportCompanyTM, String> colCountry;
+    private TableColumn<ImportCompanyTM, String> colContact;
 
     @FXML
-    private TableColumn<ExportCompanyTM, String> colEmail;
+    private TableColumn<ImportCompanyTM, String> colCountry;
+
+    @FXML
+    private TableColumn<ImportCompanyTM, String> colEmail;
 
     @FXML
     private Label lblCompanyID;
 
     @FXML
-    private TableView<ExportCompanyTM> tblExport;
+    private TableView<ImportCompanyTM> tblImport;
 
     @FXML
     private TextField txtCompanyName;
@@ -70,82 +70,83 @@ public class ExportCompanyController implements Initializable {
 
     @FXML
     private TextField txtEmail;
-    
-    ExportCompanyBO exportCompanyBO = (ExportCompanyBO) BOFactory.getInstance().getBO(BOFactory.BOType.EXPORT_COMPANY);
+
+    ImportCompanyBO importCompanyBO = (ImportCompanyBO) BOFactory.getInstance().getBO(BOFactory.BOType.IMPORT_COMPANY);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         colCompanyID.setCellValueFactory(new PropertyValueFactory<>("company_ID"));
-        colCOmpanyName.setCellValueFactory(new PropertyValueFactory<>("company_Name"));
-        colCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
+        colCompanyName.setCellValueFactory(new PropertyValueFactory<>("company_Name"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+
 
         try{
             refeshPage();
         } catch (Exception e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Fail to load Export company id").show();
+            new Alert(Alert.AlertType.ERROR, "Fail to load Import company id").show();
         }
+
     }
 
     private void refeshPage() throws SQLException, ClassNotFoundException {
-        loadNextExportCompanyID();
-        loadTableData();
+        loadNextImportCompanyID();
+        loadTableDat();
 
-        btnSaveExport.setDisable(false);
-        btnUpdateExport.setDisable(true);
-        btnDeleteExport.setDisable(true);
+        btnSaveImport.setDisable(false);
+        btnDeleteImport.setDisable(true);
+        btnUpdateImport.setDisable(true);
 
         txtCompanyName.setText("");
         txtContact.setText("");
         txtCountry.setText("");
         txtEmail.setText("");
+
     }
 
-    private void loadTableData() {
-
-        tblExport.getItems().clear();
+    private void loadTableDat() {
+        tblImport.getItems().clear();
         try{
-            ArrayList<ExportCompanyDTO> exportCompanies = exportCompanyBO.getAll();
-            for (ExportCompanyDTO exportCompany : exportCompanies) {
-                tblExport.getItems().add(new ExportCompanyTM(exportCompany.getCompany_ID(), exportCompany.getCompany_Name(), exportCompany.getCountry(), exportCompany.getContact(), exportCompany.getEmail()));
+            ArrayList<ImportCompanyDTO> importCompanyTMs = importCompanyBO.getAll();
+            for (ImportCompanyDTO importCompanyDTO : importCompanyTMs) {
+                tblImport.getItems().add(new ImportCompanyTM(importCompanyDTO.getCompany_ID(), importCompanyDTO.getCompany_Name(), importCompanyDTO.getCountry(), importCompanyDTO.getContact(), importCompanyDTO.getEmail()));
             }
         } catch (Exception e) {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-
         }
 
     }
 
-    private void loadNextExportCompanyID() throws SQLException, ClassNotFoundException {
-        String exportCompanyID = exportCompanyBO.generateNewID();
-        lblCompanyID.setText(exportCompanyID);
+    private void loadNextImportCompanyID() throws SQLException, ClassNotFoundException {
+        String importCompanyID = importCompanyBO.generateNewID();
+        lblCompanyID.setText(importCompanyID);
     }
 
     @FXML
-    void deleteExportCompany(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void deleteImportCompany(ActionEvent event) throws SQLException, ClassNotFoundException {
         String companyID = lblCompanyID.getText();
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> optionalButtonType = alert.showAndWait();
 
         if (optionalButtonType.get() == ButtonType.YES) {
-             exportCompanyBO.delete(companyID);
-             refeshPage();
-             new Alert(Alert.AlertType.INFORMATION, "Export company deleted").show();
+            importCompanyBO.delete(companyID);
+            refeshPage();
+            new Alert(Alert.AlertType.INFORMATION, "Import company deleted").show();
         } else {
-                new Alert(Alert.AlertType.ERROR, "Fail to delete Export company").show();
+            new Alert(Alert.AlertType.ERROR, "Fail to delete Import company").show();
         }
     }
 
     @FXML
-    void generateExportComapanyDetailsReport(ActionEvent event) throws ClassNotFoundException {
+    void generateImportComapnyDetailsReport(ActionEvent event) {
         try {
             JasperReport jasperReport = JasperCompileManager.compileReport(
                     getClass()
-                            .getResourceAsStream("/Reports/ExportRepo.jrxml"
+                            .getResourceAsStream("/Reports/ImportCompanyRepo.jrxml"
                             ));
 
             Connection connection = DBConnection.getInstance().getConnection();
@@ -159,24 +160,25 @@ public class ExportCompanyController implements Initializable {
             JasperViewer.viewReport(jasperPrint, false);
         } catch (JRException e) {
             new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
-            e.printStackTrace();
-        } catch (SQLException e) {
+           e.printStackTrace();
+        } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, "DB error...!").show();
         }
+
     }
 
     @FXML
-    void generateExportVehicleReport(ActionEvent event) throws ClassNotFoundException {
-        ExportCompanyTM exportCompanyTM = tblExport.getSelectionModel().getSelectedItem();
+    void generateImportVehicleReport(ActionEvent event) throws ClassNotFoundException {
+        ImportCompanyTM importCompanyTM = tblImport.getSelectionModel().getSelectedItem();
 
-        if (exportCompanyTM == null) {
+        if (importCompanyTM == null) {
             return;
         }
 
         try {
             JasperReport jasperReport = JasperCompileManager.compileReport(
                     getClass()
-                            .getResourceAsStream("/Reports/Export_Vehicle.jrxml"
+                            .getResourceAsStream("/Reports/importVehicle.jrxml"
                             ));
 
             Connection connection = DBConnection.getInstance().getConnection();
@@ -184,7 +186,7 @@ public class ExportCompanyController implements Initializable {
             Map<String, Object> parameters = new HashMap<>();
 
             parameters.put("P_Date", LocalDate.now().toString());
-            parameters.put("P_Vehicle_ID", exportCompanyTM.getCompany_ID());
+            parameters.put("P_Vehicle_ID", importCompanyTM.getCompany_ID());
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(
                     jasperReport,
@@ -202,24 +204,24 @@ public class ExportCompanyController implements Initializable {
     }
 
     @FXML
-    void onClckedTable(MouseEvent event) {
-        ExportCompanyTM exportCompanyTM = tblExport.getSelectionModel().getSelectedItem();
-        if (exportCompanyTM != null) {
-            lblCompanyID.setText(exportCompanyTM.getCompany_ID());
-            txtCompanyName.setText(exportCompanyTM.getCompany_Name());
-            txtContact.setText(exportCompanyTM.getContact());
-            txtCountry.setText(exportCompanyTM.getCountry());
-            txtEmail.setText(exportCompanyTM.getEmail());
+    void onClickedTable(MouseEvent event) {
+        ImportCompanyTM importCompanyTM = tblImport.getSelectionModel().getSelectedItem();
+        if (importCompanyTM != null) {
+            lblCompanyID.setText(importCompanyTM.getCompany_ID());
+            txtCompanyName.setText(importCompanyTM.getCompany_Name());
+            txtContact.setText(importCompanyTM.getContact());
+            txtCountry.setText(importCompanyTM.getCountry());
+            txtEmail.setText(importCompanyTM.getEmail());
 
-            btnSaveExport.setDisable(true);
-            btnDeleteExport.setDisable(false);
-            btnUpdateExport.setDisable(false);
+            btnSaveImport.setDisable(true);
+            btnDeleteImport.setDisable(false);
+            btnUpdateImport.setDisable(false);
+
         }
-
     }
 
     @FXML
-    void saveExportCompany(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void saveImportCompany(ActionEvent event) throws SQLException, ClassNotFoundException {
         String exportCompanyID = lblCompanyID.getText();
         String exportCompanyName = txtCompanyName.getText();
         String exportCompanyContact = txtContact.getText();
@@ -261,9 +263,9 @@ public class ExportCompanyController implements Initializable {
         }
 
         if(isValidName && isValidCountry && isValidEmail && isValidPhone){
-            ExportCompanyDTO exportCompanyDTO = new ExportCompanyDTO(exportCompanyID, exportCompanyName, exportCompanyCountry, exportCompanyContact, exportCompanyEmail);
+            ImportCompanyDTO importCompanyDTO = new ImportCompanyDTO(exportCompanyID, exportCompanyName, exportCompanyCountry, exportCompanyContact, exportCompanyEmail);
 
-            exportCompanyBO.save(exportCompanyDTO);
+            importCompanyBO.save(importCompanyDTO);
             refeshPage();
             new Alert(Alert.AlertType.INFORMATION, "Export company saved..!").show();
 
@@ -272,7 +274,7 @@ public class ExportCompanyController implements Initializable {
     }
 
     @FXML
-    void updateExportCompany(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void updateImportCompany(ActionEvent event) throws SQLException, ClassNotFoundException {
         String exportCompanyID = lblCompanyID.getText();
         String exportCompanyName = txtCompanyName.getText();
         String exportCompanyContact = txtContact.getText();
@@ -314,11 +316,11 @@ public class ExportCompanyController implements Initializable {
         }
 
         if(isValidName && isValidCountry && isValidEmail && isValidPhone){
-            ExportCompanyDTO exportCompanyDTO = new ExportCompanyDTO(exportCompanyID, exportCompanyName, exportCompanyCountry, exportCompanyContact, exportCompanyEmail);
+            ImportCompanyDTO importCompanyDTO = new ImportCompanyDTO(exportCompanyID, exportCompanyName, exportCompanyCountry, exportCompanyContact, exportCompanyEmail);
 
-            exportCompanyBO.update(exportCompanyDTO);
+            importCompanyBO.update(importCompanyDTO);
             refeshPage();
-            new Alert(Alert.AlertType.INFORMATION, "Export company updated..!").show();
+            new Alert(Alert.AlertType.INFORMATION, "Export company saved..!").show();
 
         }
     }
