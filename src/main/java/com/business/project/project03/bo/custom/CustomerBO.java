@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public interface CustomerBO extends SuperBO {
     ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException;
-    void save(CustomerDTO dto) throws SQLException, ClassNotFoundException;
-    void update(CustomerDTO dto) throws SQLException, ClassNotFoundException;
+    void save(CustomerDTO customer) throws SQLException, ClassNotFoundException;
+    void update(CustomerDTO customer) throws SQLException, ClassNotFoundException;
     void delete(String id) throws SQLException, ClassNotFoundException;
     String generateNewID()  throws SQLException, ClassNotFoundException;
     void generateReport() throws SQLException, ClassNotFoundException;

@@ -15,11 +15,13 @@ public class DAOFactory {
         return daoFactory;
     }
     public enum DAOType {
-        CUSTOMER
+        CUSTOMER, DRIVER
     }
     public SuperDAO getDAO(DAOType type) {
         switch (type) {
             case CUSTOMER:
+                return new CustomerDAOImpl();
+            case DRIVER:
                 return new CustomerDAOImpl();
             default:
                 return null;

@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,12 +21,14 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class CustomerController {
+public class CustomerController implements Initializable {
 
     @FXML
     private Button btnCustReservRepo;
@@ -46,19 +49,19 @@ public class CustomerController {
     private Button btncheckVehicle;
 
     @FXML
-    private TableColumn<?, ?> colAddress;
+    private TableColumn<CustomerTM, String> colAddress;
 
     @FXML
-    private TableColumn<?, ?> colContact;
+    private TableColumn<CustomerTM, String> colContact;
 
     @FXML
-    private TableColumn<?, ?> colCustID;
+    private TableColumn<CustomerTM, String> colCustID;
 
     @FXML
-    private TableColumn<?, ?> colEmail;
+    private TableColumn<CustomerTM, String> colEmail;
 
     @FXML
-    private TableColumn<?, ?> colName;
+    private TableColumn<CustomerTM, String> colName;
 
     @FXML
     private Label lblCustomerID;
@@ -81,7 +84,8 @@ public class CustomerController {
 
     CustomerBO customerBO= (CustomerBO) BOFactory.getInstance().getBO(BOFactory.BOType.CUSTOMER);
 
-    public void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         colCustID.setCellValueFactory(new PropertyValueFactory<>("cust_ID"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
@@ -160,16 +164,6 @@ public class CustomerController {
         }else{
             new Alert(Alert.AlertType.INFORMATION, "Failed to delete customer").show();
         }
-
-//        try{
-//            customerBO.delete(id);
-//            refreshPage();
-//            new Alert(Alert.AlertType.INFORMATION, "Customer deleted successfully!").show();
-//        } catch (SQLException e) {
-//            new Alert(Alert.AlertType.ERROR, "Failed to delete the customer " + id).show();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
 
     }
 

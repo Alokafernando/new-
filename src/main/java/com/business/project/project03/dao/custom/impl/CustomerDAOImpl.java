@@ -23,16 +23,16 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public boolean save(Customer dto) throws SQLException, ClassNotFoundException {
+    public boolean save(Customer entity) throws SQLException, ClassNotFoundException {
         SQLUtil.execute("insert into customer values(?, ?, ?, ?, ?)",
-                dto.getCust_ID(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getEmail());
+                entity.getCust_ID(), entity.getName(), entity.getAddress(), entity.getContact(), entity.getEmail());
         return false;
     }
 
     @Override
-    public void update(Customer dto) throws SQLException, ClassNotFoundException {
+    public void update(Customer entity) throws SQLException, ClassNotFoundException {
         SQLUtil.execute("update customer set name =?, address =?, contact =?, email =? where cust_ID = ?",
-                dto.getName(), dto.getAddress(), dto.getContact(), dto.getEmail(), dto.getCust_ID());
+                entity.getName(), entity.getAddress(), entity.getContact(), entity.getEmail(), entity.getCust_ID());
 
     }
 
@@ -57,7 +57,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void generateReport() throws SQLException, ClassNotFoundException {
-
+        //empty
     }
 
 

@@ -6,25 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/appInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/appInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/CustomerBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/CustomerBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/CustomerBOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/CrudDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/CrudDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/SQLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/CustomerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/CustomerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/view/tdm/CustomerTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/view/tdm/CustomerTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CustomerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CustomerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/VehicleView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/VehicleView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/DriverView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/DriverView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -131,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737554850519</updated>
-      <workItem from="1737554851593" duration="12481000" />
+      <workItem from="1737554851593" duration="17090000" />
     </task>
     <servers />
   </component>

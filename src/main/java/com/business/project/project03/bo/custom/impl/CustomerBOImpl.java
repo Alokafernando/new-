@@ -31,14 +31,14 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public void save(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-        customerDAO.save(new Customer(dto.getCust_ID(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getEmail()));
+    public void save(CustomerDTO customer) throws SQLException, ClassNotFoundException {
+        customerDAO.save(new Customer(customer.getCust_ID(), customer.getName(), customer.getAddress(), customer.getContact(), customer.getEmail()));
 
     }
 
     @Override
-    public void update(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-        customerDAO.update(new Customer(dto.getCust_ID(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getEmail()));
+    public void update(CustomerDTO customer) throws SQLException, ClassNotFoundException {
+        customerDAO.update(new Customer(customer.getCust_ID(), customer.getName(), customer.getAddress(), customer.getContact(), customer.getEmail()));
 
     }
 
