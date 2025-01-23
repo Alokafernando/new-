@@ -3,6 +3,7 @@ package com.business.project.project03.bo;
 
 import com.business.project.project03.bo.custom.impl.CustomerBOImpl;
 import com.business.project.project03.bo.custom.impl.DriverBOImpl;
+import com.business.project.project03.bo.custom.impl.ExportCompanyBOImpl;
 import com.business.project.project03.dao.custom.impl.DriverDAOImpl;
 
 public class BOFactory {
@@ -18,7 +19,7 @@ public class BOFactory {
     }
 
     public enum BOType {
-        CUSTOMER, DRIVER
+        CUSTOMER, DRIVER, EXPORT_COMPANY
     }
 
     public SuperBO getBO(BOType type) {
@@ -27,6 +28,8 @@ public class BOFactory {
                 return new CustomerBOImpl();
             case DRIVER:
                 return new DriverBOImpl();
+            case EXPORT_COMPANY:
+                return new ExportCompanyBOImpl();
             default:
                 return null;
         }

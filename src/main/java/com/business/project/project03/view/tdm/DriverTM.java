@@ -29,7 +29,8 @@ public class DriverTM implements Comparable<DriverTM>{
 
     @Override
     public String toString() {
-        return "id='" + driver_id + '\'' +
+        return "DriverTM" +
+                "id='" + driver_id + '\'' +
                 ", name='" + name + '\'' +
                 ", contact='" + contact + '\''+
                 '}';
@@ -37,6 +38,7 @@ public class DriverTM implements Comparable<DriverTM>{
 
     @Override
     public int compareTo(DriverTM o) {
-        return 0;
+
+        return driver_id.compareTo(o.getDriver_id());
     }
 }
