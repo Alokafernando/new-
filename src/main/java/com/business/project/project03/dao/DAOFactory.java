@@ -4,6 +4,7 @@ package com.business.project.project03.dao;
 import com.business.project.project03.dao.custom.impl.CustomerDAOImpl;
 import com.business.project.project03.dao.custom.impl.DriverDAOImpl;
 import com.business.project.project03.dao.custom.impl.ExportCompanyDAOImpl;
+import com.business.project.project03.dao.custom.impl.ImportCompanyDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -28,7 +29,7 @@ public class DAOFactory {
             case EXPORT_COMPANY:
                 return new ExportCompanyDAOImpl();
             case IMPORT_COMPANY:
-                return new ExportCompanyDAOImpl();
+                return new ImportCompanyDAOImpl();
             default:
                 return null;
         }
