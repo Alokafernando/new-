@@ -2,6 +2,7 @@ package com.business.project.project03.dao;
 
 
 import com.business.project.project03.dao.custom.impl.CustomerDAOImpl;
+import com.business.project.project03.dao.custom.impl.DriverDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -22,7 +23,7 @@ public class DAOFactory {
             case CUSTOMER:
                 return new CustomerDAOImpl();
             case DRIVER:
-                return new CustomerDAOImpl();
+                return new DriverDAOImpl();
             default:
                 return null;
         }

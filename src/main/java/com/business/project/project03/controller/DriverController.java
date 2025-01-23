@@ -149,19 +149,38 @@ public class DriverController implements Initializable {
         }
     }
 
-    @FXML
-    void onClickedTable(ActionEvent event) {
-        DriverTM driverTM = tblDriver.getSelectionModel().getSelectedItem();
-        if (driverTM != null) {
-            lblDiverID.setText(driverTM.getDriver_id());
-            txtDriverName.setText(driverTM.getName());
-            txtDriverContact.setText(driverTM.getContact());
+//    @FXML
+//    void onClickedTable(ActionEvent event) {
+//        DriverTM driverTM = tblDriver.getSelectionModel().getSelectedItem();
+//        if (driverTM != null) {
+//            System.out.println(driverTM.getDriver_id());
+//            System.out.println(driverTM.getName());
+//            System.out.println(driverTM.getContact());
+//
+//            lblDiverID.setText(driverTM.getDriver_id());
+//            txtDriverName.setText(driverTM.getName());
+//            txtDriverContact.setText(driverTM.getContact());
+//
+//            btnSaveDriver.setDisable(true);
+//            btnupdateDriver.setDisable(false);
+//            btndeleteDriver.setDisable(false); //////////not set valuves to
+//        }
+//
+//    }
+@FXML
+void onClickedTable(MouseEvent event) {
+    DriverTM driverTM = tblDriver.getSelectionModel().getSelectedItem();
+    if (driverTM != null) {
+        lblDiverID.setText(driverTM.getDriver_id());
+        txtDriverName.setText(driverTM.getName());
+        txtDriverContact.setText(driverTM.getContact());
 
-            btnSaveDriver.setDisable(true);
-            btnupdateDriver.setDisable(false);
-            btndeleteDriver.setDisable(false);
-        }
+        btnSaveDriver.setDisable(true);
+        btnupdateDriver.setDisable(false);
+        btndeleteDriver.setDisable(false);
     }
+}
+
 
     @FXML
     void saveDriver(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -226,7 +245,7 @@ public class DriverController implements Initializable {
         if (isValidName && isValidContact){
             DriverDTO driverDTO = new DriverDTO(driverId, driverName, contact);
 
-            driverBO.delete(String.valueOf(driverDTO));
+            driverBO.update(driverDTO);
             refeshPage();
             new Alert(Alert.AlertType.INFORMATION, "Driver updated successfully").show();
 
