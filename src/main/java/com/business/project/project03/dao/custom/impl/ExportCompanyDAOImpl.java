@@ -18,7 +18,7 @@ public class ExportCompanyDAOImpl implements ExportCompanyDAO {
         ArrayList<ExportCompany> exportCompanyDTOS = new ArrayList<>();
 
         while (rst.next()) {
-                   exportCompanyDTOS.add(new ExportCompany(rst.getString("company_ID"), rst.getString("company_Name"), rst.getString("country"), rst.getString("contact"), rst.getString("email")));
+                   exportCompanyDTOS.add(new ExportCompany(rst.getString("company_ID"), rst.getString("company_name"), rst.getString("county"), rst.getString("contact"), rst.getString("email")));
         }
         return exportCompanyDTOS;
     }

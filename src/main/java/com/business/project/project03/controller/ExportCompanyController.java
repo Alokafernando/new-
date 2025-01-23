@@ -113,7 +113,9 @@ public class ExportCompanyController implements Initializable {
                 tblExport.getItems().add(new ExportCompanyTM(exportCompany.getCompany_ID(), exportCompany.getCompany_Name(), exportCompany.getCountry(), exportCompany.getContact(), exportCompany.getEmail()));
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
         }
 
     }
