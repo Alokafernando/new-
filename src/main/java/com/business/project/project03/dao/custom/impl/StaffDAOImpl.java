@@ -14,7 +14,7 @@ public class StaffDAOImpl implements StaffDAO {
         ResultSet rst = SQLUtil.execute("select * from staff");
         ArrayList<Staff> staff = new ArrayList<>();
         while (rst.next()) {
-            staff.add(new Staff(rst.getString("staff_id"), rst.getString("name"), rst.getString("address"), rst.getDouble("salary"), rst.getString("salary")));
+            staff.add(new Staff(rst.getString("staff_id"), rst.getString("name"), rst.getString("address"), rst.getDouble("salary"), rst.getString("role")));
         }
         return staff;
     }
