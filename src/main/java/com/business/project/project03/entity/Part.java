@@ -3,15 +3,15 @@ package com.business.project.project03.entity;
 public class Part {
     private String part_id;
     private String name;
-    private double price;
+    private double unit_price;
     private int quantity;
 
     public Part() {}
 
-    public Part(String part_id, String name, double price, int quantity) {
+    public Part(String part_id, String name, double unit_price, int quantity) {
         this.part_id = part_id;
         this.name = name;
-        this.price = price;
+        this.unit_price = unit_price;
         this.quantity = quantity;
     }
     public String getPart_id() {
@@ -27,10 +27,10 @@ public class Part {
         this.name = name;
     }
     public double getPrice() {
-        return price;
+        return unit_price;
     }
     public void setPrice(double price) {
-        this.price = price;
+        this.unit_price = price;
     }
     public int getQuantity() {
         return quantity;
@@ -44,7 +44,7 @@ public class Part {
         return "PartDTO{" +
                 "part_id='" + part_id + '\'' +
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price=" + unit_price +
                 ", quantity=" + quantity +
                 '}';
     }

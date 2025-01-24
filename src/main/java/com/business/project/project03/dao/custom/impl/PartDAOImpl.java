@@ -16,7 +16,7 @@ public class PartDAOImpl implements PartDAO {
         ResultSet rst = SQLUtil.execute("select * from part");
         ArrayList<Part> parts = new ArrayList<>();
         while (rst.next()) {
-            parts.add(new Part(rst.getString("part_id"), rst.getString("name"),  rst.getDouble("price"), rst.getInt("quantity")));
+            parts.add(new Part(rst.getString("part_id"), rst.getString("name"),  rst.getDouble("unit_price"), rst.getInt("quantity")));
         }
         return parts;
     }

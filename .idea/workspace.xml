@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/CustomerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/ExportCompanyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/ExportCompanyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/ImportCompanyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/ImportCompanyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Parts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Parts.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/PartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/PartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/PartDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/PartDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/PartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/PartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/view/tdm/PartTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/view/tdm/PartTM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1737554850519</updated>
-      <workItem from="1737554851593" duration="33214000" />
+      <workItem from="1737554851593" duration="34428000" />
     </task>
     <servers />
   </component>

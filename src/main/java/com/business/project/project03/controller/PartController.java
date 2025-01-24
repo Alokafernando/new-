@@ -98,11 +98,12 @@ public class PartController implements Initializable {
         tblPart.getItems().clear();
         try{
             ArrayList<PartDTO> partDTOS = partBO.getAll();
-            for(PartDTO partDTO : partDTOS){
-                partDTOS.add(new PartDTO(partDTO.getPart_id(), partDTO.getName(),  partDTO.getPrice(), partDTO.getQuantity()));
+            for (PartDTO partDTO : partDTOS) {
+                tblPart.getItems().add(new PartTM(partDTO.getPart_id(), partDTO.getName(), partDTO.getPrice(), partDTO.getQuantity()));
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 
