@@ -22,15 +22,15 @@ public class PartDAOImpl implements PartDAO {
     }
 
     @Override
-    public boolean save(Part dto) throws SQLException, ClassNotFoundException {
+    public boolean save(Part entity) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("insert into part  VALUES (?, ?, ?, ?)",
-                dto.getPart_id(), dto.getName(), dto.getPrice(), dto.getQuantity());
+                entity.getPart_id(), entity.getName(), entity.getPrice(), entity.getQuantity());
     }
 
     @Override
-    public void update(Part dto) throws SQLException, ClassNotFoundException {
+    public void update(Part entity) throws SQLException, ClassNotFoundException {
         SQLUtil.execute("update part set name = ?, unit_price = ?, quantity = ? where part_id = ?",
-                dto.getName(), dto.getPrice(), dto.getQuantity(), dto.getPart_id()
+                entity.getName(), entity.getPrice(), entity.getQuantity(), entity.getPart_id()
         );
     }
 
