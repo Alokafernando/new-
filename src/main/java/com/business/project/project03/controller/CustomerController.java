@@ -115,7 +115,6 @@ public class CustomerController implements Initializable {
     }
 
     private void loadTableData() throws SQLException, ClassNotFoundException {
-
         tblCustomer.getItems().clear();
         try{
             ArrayList<CustomerDTO> allCustomers = customerBO.getAll();

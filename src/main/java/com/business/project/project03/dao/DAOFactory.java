@@ -1,10 +1,7 @@
 package com.business.project.project03.dao;
 
 
-import com.business.project.project03.dao.custom.impl.CustomerDAOImpl;
-import com.business.project.project03.dao.custom.impl.DriverDAOImpl;
-import com.business.project.project03.dao.custom.impl.ExportCompanyDAOImpl;
-import com.business.project.project03.dao.custom.impl.ImportCompanyDAOImpl;
+import com.business.project.project03.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -18,7 +15,7 @@ public class DAOFactory {
         return daoFactory;
     }
     public enum DAOType {
-        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY
+        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART
     }
     public SuperDAO getDAO(DAOType type) {
         switch (type) {
@@ -30,6 +27,8 @@ public class DAOFactory {
                 return new ExportCompanyDAOImpl();
             case IMPORT_COMPANY:
                 return new ImportCompanyDAOImpl();
+            case PART:
+                return new PartDAOImpl();
             default:
                 return null;
         }

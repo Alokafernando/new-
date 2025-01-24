@@ -42,7 +42,7 @@ public class ExportCompanyDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "ExportCompanyTM" +
+        return "ExportCompanyDTO" +
                 "id='" + company_ID + '\'' +
                 ", name='" + company_Name + '\'' +
                 ", country='" + country + '\'' +

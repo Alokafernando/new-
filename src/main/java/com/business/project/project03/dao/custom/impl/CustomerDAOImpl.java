@@ -15,8 +15,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         ArrayList<Customer> customers = new ArrayList<>();
         while (rst.next()) {
            customers.add(new Customer(
-                   rst.getString("cust_ID"), rst.getString("name"), rst.getString("address"), rst.getString("contact"), rst.getString("email")
-           ));
+                   rst.getString("cust_ID"), rst.getString("name"), rst.getString("address"), rst.getString("contact"), rst.getString("email")));
         }
         return customers;
 
