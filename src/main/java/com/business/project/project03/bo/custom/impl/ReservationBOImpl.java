@@ -49,4 +49,9 @@ public class ReservationBOImpl implements ReservationBO {
     public void generateReport() throws SQLException, ClassNotFoundException {
         reservationDAO.generateReport();
     }
+
+    @Override
+    public ArrayList<String> getAllReservationIDS() throws SQLException, ClassNotFoundException {
+        return reservationDAO.getAllReservationIDS();
+    }
 }
