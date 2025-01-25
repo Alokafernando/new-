@@ -7,6 +7,7 @@ import com.business.project.project03.dao.custom.CustomerDAO;
 import com.business.project.project03.db.DBConnection;
 import com.business.project.project03.entity.Customer;
 import com.business.project.project03.model.CustomerDTO;
+import com.business.project.project03.view.tdm.CustomerTM;
 import javafx.scene.control.Alert;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
@@ -55,5 +56,15 @@ public class CustomerBOImpl implements CustomerBO {
     @Override
     public void generateReport() throws SQLException, ClassNotFoundException {
         customerDAO.generateReport();
+    }
+
+    @Override
+    public ArrayList<String> getAllCustomerIds() throws SQLException, ClassNotFoundException {
+        return customerDAO.getAllCustomerIds();
+    }
+
+    @Override
+    public CustomerTM findbyId(String selectedCustId) throws SQLException, ClassNotFoundException {
+        return customerDAO.findbyId(selectedCustId);
     }
 }

@@ -3,6 +3,7 @@ package com.business.project.project03.dao.custom.impl;
 import com.business.project.project03.dao.SQLUtil;
 import com.business.project.project03.dao.custom.CustomerDAO;
 import com.business.project.project03.entity.Customer;
+import com.business.project.project03.view.tdm.CustomerTM;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -60,4 +61,23 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
 
+    @Override
+    public ArrayList<String> getAllCustomerIds() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("select cust_ID from customer");
+        ArrayList<String> customerIds = new ArrayList<>();
+
+        while (rst.next()) {
+            customerIds.add(rst.getString(1));
+        }
+        return customerIds;
+    }
+
+    @Override
+    public CustomerTM findbyId(String selectedCustId) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("select * from customer where cust_ID = ?", selectedCustId);
+        if(rst.next()){
+            return new CustomerTM(rst.getString(1), rst.getString(2), rst.getString(3), rst.getString(4), rst.getString(5));
+        }
+        return null;
+    }
 }
