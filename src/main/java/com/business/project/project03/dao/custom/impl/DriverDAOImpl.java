@@ -4,6 +4,7 @@ import com.business.project.project03.dao.SQLUtil;
 import com.business.project.project03.dao.custom.DriverDAO;
 import com.business.project.project03.entity.Driver;
 import com.business.project.project03.model.DriverDTO;
+import com.business.project.project03.view.tdm.DriverTM;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -59,5 +60,31 @@ public class DriverDAOImpl implements DriverDAO {
     @Override
     public void generateReport() throws SQLException, ClassNotFoundException {
         //empty
+    }
+
+    @Override
+    public ArrayList<String> getAllDrivers() throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("select driver_id from driver");
+        ArrayList<String> driverIds = new ArrayList<>();
+
+        while (rst.next()) {
+            driverIds.add(rst.getString(1));
+        }
+        return driverIds;
+    }
+
+    @Override
+    public DriverTM findByID(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("select * from driver where driver_id=?", id);
+
+        if (rst.next()) {
+            return new DriverTM(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3)
+
+            );
+        }
+        return null;
     }
 }
