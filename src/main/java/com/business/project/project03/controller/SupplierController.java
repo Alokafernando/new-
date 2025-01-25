@@ -2,6 +2,7 @@ package com.business.project.project03.controller;
 
 import com.business.project.project03.bo.BOFactory;
 import com.business.project.project03.bo.custom.SupplierBO;
+import com.business.project.project03.db.DBConnection;
 import com.business.project.project03.model.SupplierDTO;
 import com.business.project.project03.view.tdm.SupplierTM;
 import javafx.event.ActionEvent;
@@ -10,11 +11,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.time.LocalDate;
+import java.util.*;
 
 public class SupplierController implements Initializable {
 
@@ -111,32 +115,185 @@ public class SupplierController implements Initializable {
     }
 
     @FXML
-    void deleteSupplier(ActionEvent event) {
+    void deleteSupplier(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String supplierID = lblSupplierID.getText();
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure?", ButtonType.YES, ButtonType.NO);
+        Optional<ButtonType> optionalButtonType = alert.showAndWait();
+
+        if (optionalButtonType.get() == ButtonType.YES) {
+
+            supplierBO.delete(supplierID);
+            refeshPage();
+            new Alert(Alert.AlertType.INFORMATION, "Supplier deleted...!").show();
+
+        }
+    }
+
+    @FXML
+    void generateSupplierDetailsRepo(ActionEvent event) throws  ClassNotFoundException {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/Reports/Supplier.jrxml"
+                            ));
+
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
 
     }
 
     @FXML
-    void generateSupplierDetailsRepo(ActionEvent event) {
+    void generateSupplyDetailsRepo(ActionEvent event) throws ClassNotFoundException {
+        SupplierTM  supplierTM = tblSupplier.getSelectionModel().getSelectedItem();
 
-    }
+        if (supplierTM == null) {
+            return;
+        }
 
-    @FXML
-    void generateSupplyDetailsRepo(ActionEvent event) {
+        try {
+            JasperReport jasperReport = JasperCompileManager.compileReport(
+                    getClass()
+                            .getResourceAsStream("/Reports/SupplyDetails.jrxml"
+                            ));
 
+            Connection connection = DBConnection.getInstance().getConnection();
+
+            Map<String, Object> parameters = new HashMap<>();
+
+            parameters.put("P_Date", LocalDate.now().toString());
+            parameters.put("P_Supplier_id", supplierTM.getSupplier_id());
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    parameters,
+                    connection
+            );
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (JRException e) {
+            new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
+//           e.printStackTrace();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "DB error...!").show();
+        }
     }
 
     @FXML
     void onClickedTable(MouseEvent event) {
+        SupplierTM staffTM = tblSupplier.getSelectionModel().getSelectedItem();
+        if (staffTM != null) {
+            lblSupplierID.setText(staffTM.getSupplier_id());
+            txtCompanyName.setText(staffTM.getName());
+            txtContact.setText(staffTM.getContact());
+            txtEmail.setText(staffTM.getEmail());
 
+            btnSaveSupplier.setDisable(true);
+            btnUpdateSupplier.setDisable(false);
+            btnDeleteSupplier.setDisable(false);
+        }
     }
 
     @FXML
-    void saveSupplier(ActionEvent event) {
+    void saveSupplier(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String supplierID = lblSupplierID.getText();
+        String companyName = txtCompanyName.getText();
+        String contact = txtContact.getText();
+        String email = txtEmail.getText();
 
+        String namePattern = "^[A-Za-z ]+$";
+        String emailPattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        String phonePattern = "^(\\d+)||((\\d+\\.)(\\d){2})$";
+
+        boolean isValidName = companyName.matches(namePattern);
+        boolean isValidContact = contact.matches(phonePattern);
+        boolean isValidEmail = email.matches(emailPattern);
+        String errorStyle = "-fx-border-color: red; -fx-border-width: 0 0 1 0; -fx-background-color: transparent;";
+        String style = "-fx-border-color:  #1e3799; -fx-border-width: 0 0 1 0; -fx-background-color: transparent;";
+
+
+        if(!isValidName){
+            txtCompanyName.setStyle(errorStyle);
+        }else {
+            txtCompanyName.setStyle(style);
+        }
+        if(!isValidContact){
+            txtContact.setStyle(errorStyle);
+        }else {
+            txtContact.setStyle(style);
+        }
+        if(!isValidEmail){
+            txtEmail.setStyle(errorStyle);
+        }else{
+            txtEmail.setStyle(style);
+        }
+
+        if(isValidName && isValidContact && isValidEmail){
+            SupplierDTO supplierDTO = new SupplierDTO(supplierID, companyName, contact, email
+            );
+
+            supplierBO.save(supplierDTO);
+            refeshPage();
+            new Alert(Alert.AlertType.INFORMATION, "supplier saved...!").show();
+
+        }
     }
 
     @FXML
-    void updateSupplier(ActionEvent event) {
+    void updateSupplier(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String supplierID = lblSupplierID.getText();
+        String companyName = txtCompanyName.getText();
+        String contact = txtContact.getText();
+        String email = txtEmail.getText();
+
+        String namePattern = "^[A-Za-z ]+$";
+        String emailPattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        String phonePattern = "^(\\d+)||((\\d+\\.)(\\d){2})$";
+
+        boolean isValidName = companyName.matches(namePattern);
+        boolean isValidContact = contact.matches(phonePattern);
+        boolean isValidEmail = email.matches(emailPattern);
+        String errorStyle = "-fx-border-color: red; -fx-border-width: 0 0 1 0; -fx-background-color: transparent;";
+        String style = "-fx-border-color:  #1e3799; -fx-border-width: 0 0 1 0; -fx-background-color: transparent;";
+
+
+        if(!isValidName){
+            txtCompanyName.setStyle(errorStyle);
+        }else {
+            txtCompanyName.setStyle(style);
+        }
+        if(!isValidContact){
+            txtContact.setStyle(errorStyle);
+        }else {
+            txtContact.setStyle(style);
+        }
+        if(!isValidEmail){
+            txtEmail.setStyle(errorStyle);
+        }else{
+            txtEmail.setStyle(style);
+        }
+
+        if(isValidName && isValidContact && isValidEmail){
+            SupplierDTO supplierDTO = new SupplierDTO(supplierID, companyName, contact, email);
+
+            supplierBO.update(supplierDTO);
+            refeshPage();
+            new Alert(Alert.AlertType.INFORMATION, "supplier updated...!").show();
+
+        }
 
     }
 
