@@ -1,7 +1,7 @@
 package com.business.project.project03.bo.custom;
 
 import com.business.project.project03.bo.SuperBO;
-import com.business.project.project03.model.TransportDTO;
+import com.business.project.project03.model.TaxDTO;
 import com.business.project.project03.model.VehicleDTO;
 
 import java.sql.SQLException;

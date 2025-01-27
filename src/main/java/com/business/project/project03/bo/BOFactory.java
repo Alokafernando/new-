@@ -17,7 +17,7 @@ public class BOFactory {
     }
 
     public enum BOType {
-        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART, STAFF, SUPPLIER, TRANSPORT, RESERVATION, PAYMENT, VEHICLE, CHECK
+        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART, STAFF, SUPPLIER, TRANSPORT, RESERVATION, PAYMENT, VEHICLE, CHECK, TAX
     }
 
     public SuperBO getBO(BOType type) {
@@ -46,6 +46,8 @@ public class BOFactory {
                 return new VehicleBOImpl();
             case CHECK:
                 return new CheckBOImpl();
+            case TAX:
+                return new TaxBOImpl();
             default:
                 return null;
         }

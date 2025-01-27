@@ -15,7 +15,7 @@ public class DAOFactory {
         return daoFactory;
     }
     public enum DAOType {
-        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART, STAFF, SUPPLIER, TRANSPORT, RESERVATION, PAYMENT, VEHICLE, CHECK
+        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART, STAFF, SUPPLIER, TRANSPORT, RESERVATION, PAYMENT, VEHICLE, CHECK, TAX
     }
     public SuperDAO getDAO(DAOType type) {
         switch (type) {
@@ -43,6 +43,8 @@ public class DAOFactory {
                 return new VehicleDAOImpl();
             case CHECK:
                 return new CheckDAOImpl();
+            case TAX:
+                return new TaxDAOImpl();
             default:
                 return null;
         }
