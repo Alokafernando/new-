@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/VehicleBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/VehicleBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/VehicleBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/VehicleBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/TaxView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/TaxView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/TaxBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/TaxBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/TaxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/TaxController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/TaxDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/TaxDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +132,7 @@
       <workItem from="1737554851593" duration="40955000" />
       <workItem from="1737772755409" duration="19000" />
       <workItem from="1737806723285" duration="15971000" />
-      <workItem from="1737844689882" duration="12886000" />
+      <workItem from="1737844689882" duration="15744000" />
     </task>
     <servers />
   </component>

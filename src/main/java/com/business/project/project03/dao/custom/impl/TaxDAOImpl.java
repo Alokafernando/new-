@@ -24,10 +24,10 @@ public class TaxDAOImpl implements TaxDAO {
     public boolean save(Tax entity) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("insert into tax values (?, ?, ?, ?, ?)",
                 entity.getVehicleId(),
+                entity.getTaxId(),
                 entity.getImportTax(),
                 entity.getExportTax(),
-                entity.getGroundTax(),
-                entity.getTaxId());
+                entity.getGroundTax());
     }
 
     @Override

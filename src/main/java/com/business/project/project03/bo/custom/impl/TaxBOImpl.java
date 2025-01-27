@@ -18,7 +18,7 @@ public class TaxBOImpl implements TaxBO {
         ArrayList<TaxDTO> taxDTOS = new ArrayList<>();
         ArrayList<Tax> taxes = taxDAO.getAll();
         for (Tax tax : taxes) {
-            taxes.add(new Tax(tax.getVehicleId(), tax.getTaxId(), tax.getImportTax(), tax.getExportTax(), tax.getGroundTax()));
+            taxDTOS.add(new TaxDTO(tax.getVehicleId(), tax.getTaxId(), tax.getImportTax(), tax.getExportTax(), tax.getGroundTax()));
         }
         return taxDTOS;
     }

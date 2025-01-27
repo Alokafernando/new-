@@ -82,11 +82,11 @@ public class TaxController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        colVehicleID.setCellValueFactory(new PropertyValueFactory<>("vehicle_id"));
-        colTaxID.setCellValueFactory(new PropertyValueFactory<>("tax_id"));
-        colImportTax.setCellValueFactory(new PropertyValueFactory<>("import_tax"));
-        colExportTax.setCellValueFactory(new PropertyValueFactory<>("export_tax"));
-        colGroundTAx.setCellValueFactory(new PropertyValueFactory<>("ground_tax"));
+        colVehicleID.setCellValueFactory(new PropertyValueFactory<>("vehicleId"));
+        colTaxID.setCellValueFactory(new PropertyValueFactory<>("taxId"));
+        colImportTax.setCellValueFactory(new PropertyValueFactory<>("importTax"));
+        colExportTax.setCellValueFactory(new PropertyValueFactory<>("exportTax"));
+        colGroundTAx.setCellValueFactory(new PropertyValueFactory<>("groundTax"));
 
         try{
             refeshPage();
@@ -111,10 +111,10 @@ public class TaxController implements Initializable {
     }
 
     private void loadTableData() throws ClassNotFoundException, SQLException {
-        tblTax.getItems().isEmpty();
+        tblTax.getItems().clear();
         try{
            ArrayList<TaxDTO> taxDTOS = taxBO.getAll();
-           for (TaxDTO taxDTO :taxDTOS){
+           for (TaxDTO taxDTO : taxDTOS){
                tblTax.getItems().add(new TaxTM(taxDTO.getVehicleId(), taxDTO.getTaxId(), taxDTO.getImportTax(), taxDTO.getExportTax(), taxDTO.getGroundTax()));
            }
         } catch (SQLException e) {
@@ -177,7 +177,7 @@ public class TaxController implements Initializable {
             JasperViewer.viewReport(jasperPrint, false);
         } catch (JRException e) {
             new Alert(Alert.AlertType.ERROR, "Fail to generate report...!").show();
-//           e.printStackTrace();
+           e.printStackTrace();
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "DB error...!").show();
         }
@@ -185,7 +185,7 @@ public class TaxController implements Initializable {
 
     @FXML
     void onClickedtable(MouseEvent event) throws SQLException, ClassNotFoundException {
-        TaxTM taxTM = (TaxTM) tblTax.getSelectionModel().getSelectedItem();/////////////////////////////////////
+        TaxTM taxTM = (TaxTM) tblTax.getSelectionModel().getSelectedItem();
 
         if (taxTM != null) {
             cmbVehicleID.getItems().clear();
