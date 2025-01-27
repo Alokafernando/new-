@@ -7,14 +7,8 @@
     <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/ExportCompanyBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/ExportCompanyBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/ImportCompanyBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/ImportCompanyBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/TransportBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/TransportBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/ExportCompanyBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/ExportCompanyBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/ImportCompanyBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/ImportCompanyBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/TransportBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/TransportBOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/VehicleView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/VehicleView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CheckVehicle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CheckVehicle.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +132,7 @@
       <workItem from="1737554851593" duration="40955000" />
       <workItem from="1737772755409" duration="19000" />
       <workItem from="1737806723285" duration="15971000" />
-      <workItem from="1737844689882" duration="6720000" />
+      <workItem from="1737844689882" duration="8737000" />
     </task>
     <servers />
   </component>
