@@ -47,4 +47,9 @@ public class TransportBOImpl implements TransportBO {
     public void generateReport() throws SQLException, ClassNotFoundException {
         transportDAO.generateReport();
     }
+
+    @Override
+    public ArrayList<String> getAllTransportIDs() throws SQLException, ClassNotFoundException {
+        return transportDAO.getAllTransportIds();
+    }
 }

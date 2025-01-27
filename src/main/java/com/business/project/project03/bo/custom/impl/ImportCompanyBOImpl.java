@@ -47,4 +47,9 @@ public class ImportCompanyBOImpl implements ImportCompanyBO {
     public void generateReport() throws SQLException, ClassNotFoundException {
         importCompanyDAO.generateReport();
     }
+
+    @Override
+    public ArrayList<String> getAllImportCompanyIDs() throws SQLException, ClassNotFoundException {
+        return importCompanyDAO.getAllImportCompanyIDs();
+    }
 }

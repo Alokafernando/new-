@@ -14,4 +14,5 @@ public interface ImportCompanyBO extends SuperBO {
     void delete(String id) throws SQLException, ClassNotFoundException;
     String generateNewID()  throws SQLException, ClassNotFoundException;
     void generateReport() throws SQLException, ClassNotFoundException;
+    ArrayList<String> getAllImportCompanyIDs() throws SQLException, ClassNotFoundException;
 }

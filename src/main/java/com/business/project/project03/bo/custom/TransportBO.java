@@ -14,5 +14,6 @@ public interface TransportBO extends SuperBO {
     void delete(String id) throws SQLException, ClassNotFoundException;
     String generateNewID()  throws SQLException, ClassNotFoundException;
     void generateReport() throws SQLException, ClassNotFoundException;
+    ArrayList<String> getAllTransportIDs() throws SQLException, ClassNotFoundException;
 
 }

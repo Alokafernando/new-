@@ -50,4 +50,9 @@ public class ExportCompanyBOImpl implements ExportCompanyBO {
     public void generateReport() throws SQLException, ClassNotFoundException {
         exportCompanyDAO.generateReport();
     }
+
+    @Override
+    public ArrayList<String> getAllExportCompanyIds() throws SQLException, ClassNotFoundException {
+        return exportCompanyDAO.getAllExportCompanyIDs();
+    }
 }
