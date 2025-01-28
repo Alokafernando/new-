@@ -7,11 +7,11 @@ module com.business.project.project03 {
     requires net.sf.jasperreports.core;
     requires lombok;
 
-    opens com.business.project.project03.view.tdm to javafx.base;
+    opens lk.ijse.pos.leyard.view.tdm to javafx.base;
 
-    opens com.business.project.project03.controller to javafx.fxml;
-    exports com.business.project.project03;
-    exports com.business.project.project03.view.tdm;
+    opens lk.ijse.pos.leyard.controller to javafx.fxml;
+    exports lk.ijse.pos.leyard;
+    exports lk.ijse.pos.leyard.view.tdm;
 
 
 

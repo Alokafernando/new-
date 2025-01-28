@@ -92,7 +92,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.business.project.project03/com.business.project.project03.appInitializer
+                            <mainClass>com.business.project.project03/lk.ijse.pos.leyard.appInitializer
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
