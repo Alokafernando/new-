@@ -1,7 +1,6 @@
 package lk.ijse.pos.leyard.dao;
 
 
-import com.business.project.project03.dao.custom.impl.*;
 import lk.ijse.pos.leyard.dao.custom.impl.*;
 
 public class DAOFactory {

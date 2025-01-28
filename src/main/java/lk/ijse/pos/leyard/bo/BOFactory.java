@@ -1,7 +1,6 @@
 package lk.ijse.pos.leyard.bo;
 
 
-import com.business.project.project03.bo.custom.impl.*;
 import lk.ijse.pos.leyard.bo.custom.impl.*;
 
 public class BOFactory {

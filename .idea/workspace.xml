@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/CustomerController.java" afterDir="false" />
-    </list>
+    <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +128,7 @@
       <workItem from="1737554851593" duration="40955000" />
       <workItem from="1737772755409" duration="19000" />
       <workItem from="1737806723285" duration="15971000" />
-      <workItem from="1737844689882" duration="38539000" />
+      <workItem from="1737844689882" duration="39610000" />
     </task>
     <servers />
   </component>
