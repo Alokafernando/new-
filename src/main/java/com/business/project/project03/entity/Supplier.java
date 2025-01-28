@@ -33,13 +33,5 @@ public class Supplier implements Serializable {
 
     public void setEmail(String email) {this.email = email;}
 
-    @Override
-    public String toString() {
-        return "SupplierDTO{" +
-                "supplier_id='" + supplier_id + '\'' +
-                ", name='" + name + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
+
 }

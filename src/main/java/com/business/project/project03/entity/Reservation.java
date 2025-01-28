@@ -26,12 +26,5 @@ public class Reservation {
 
     public void setReservation_date(String reservation_date) {this.reservation_date = reservation_date;}
 
-    @Override
-    public String toString() {
-        return "ReservationDTO{" +
-                "cust_id='" + cust_id + '\'' +
-                ", reservation_id='" + reservation_id + '\'' +
-                ", reservation_date='" + reservation_date + '\'' +
-                '}';
-    }
+
 }

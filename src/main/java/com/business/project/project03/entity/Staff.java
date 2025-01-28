@@ -39,14 +39,5 @@ public class Staff implements Serializable {
 
     public void setRole(String role) {this.role = role;}
 
-    @Override
-    public String toString() {
-        return "StaffDTO{" +
-                "staff_id='" + staff_id + '\'' +
-                ", staff_name='" + staff_name + '\'' +
-                ", address='" + address + '\'' +
-                ", salary=" + salary +
-                ", role='" + role + '\'' +
-                '}';
-    }
+
 }

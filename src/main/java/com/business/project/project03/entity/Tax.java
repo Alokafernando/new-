@@ -37,14 +37,5 @@ public class Tax {
 
     public void setGroundTax(double groundTax) {this.groundTax = groundTax;}
 
-    @Override
-    public String toString() {
-        return "Tax{" +
-                "vehicleId='" + vehicleId + '\'' +
-                ", taxId='" + taxId + '\'' +
-                ", importTax=" + importTax +
-                ", exportTax=" + exportTax +
-                ", groundTax=" + groundTax +
-                '}';
-    }
+
 }

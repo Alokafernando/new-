@@ -48,4 +48,14 @@ public class PartBOImpl implements PartBO {
     public void generateReport() throws SQLException, ClassNotFoundException {
         partDAO.generateReport();
     }
+
+    @Override
+    public ArrayList<String> getAllPartIds() throws SQLException, ClassNotFoundException {
+        return partDAO.getAllPartIds();
+    }
+
+    @Override
+    public PartDTO findById(String selectedId) throws SQLException, ClassNotFoundException {
+        return partDAO.findById(selectedId);
+    }
 }

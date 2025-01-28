@@ -4,6 +4,8 @@ import com.business.project.project03.dao.SQLUtil;
 import com.business.project.project03.dao.custom.PartDAO;
 import com.business.project.project03.entity.Part;
 import com.business.project.project03.model.PartDTO;
+import com.business.project.project03.model.PartDetailDTO;
+import com.business.project.project03.model.SupplierDetailDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,8 +32,7 @@ public class PartDAOImpl implements PartDAO {
     @Override
     public void update(Part entity) throws SQLException, ClassNotFoundException {
         SQLUtil.execute("update part set name = ?, unit_price = ?, quantity = ? where part_id = ?",
-                entity.getName(), entity.getPrice(), entity.getQuantity(), entity.getPart_id()
-        );
+                entity.getName(), entity.getPrice(), entity.getQuantity(), entity.getPart_id());
     }
 
     @Override
@@ -81,5 +82,23 @@ public class PartDAOImpl implements PartDAO {
         }
 
         return null;
+    }
+
+    @Override
+    public boolean redQty(SupplierDetailDTO supplierDetailDTOS) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute(
+                "UPDATE part SET quantity = quantity + ? WHERE part_id = ?",
+                supplierDetailDTOS.getQuantity(),
+                supplierDetailDTOS.getPart_id()
+        );
+    }
+
+    @Override
+    public boolean decrementQty(PartDetailDTO partDetailDTO) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute(
+                "UPDATE part SET quantity = quantity - ? WHERE part_id = ?",
+                partDetailDTO.getQuantity(),
+                partDetailDTO.getPart_id()
+        );
     }
 }

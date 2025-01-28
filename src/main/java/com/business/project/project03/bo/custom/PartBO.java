@@ -14,4 +14,7 @@ public interface PartBO extends SuperBO {
     void delete(String id) throws SQLException, ClassNotFoundException;
     String generateNewID()  throws SQLException, ClassNotFoundException;
     void generateReport() throws SQLException, ClassNotFoundException;
+    ArrayList<String> getAllPartIds() throws SQLException, ClassNotFoundException;
+    PartDTO findById(String selectedId) throws SQLException, ClassNotFoundException;
+
 }

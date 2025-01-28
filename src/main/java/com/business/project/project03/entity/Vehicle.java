@@ -95,23 +95,5 @@ public class Vehicle {
 
     public void setTransport_id(String transport_id) {this.transport_id = transport_id;}
 
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "import_company_id='" + import_company_id + '\'' +
-                ", import_date='" + import_date + '\'' +
-                ", vehicle_id='" + vehicle_id + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                ", color='" + color + '\'' +
-                ", current_status='" + current_status + '\'' +
-                ", export_company_id='" + export_company_id + '\'' +
-                ", export_date='" + export_date + '\'' +
-                ", sale_date='" + sale_date + '\'' +
-                ", import_price=" + import_price +
-                ", export_price=" + export_price +
-                ", reservation_id='" + reservation_id + '\'' +
-                ", transport_id='" + transport_id + '\'' +
-                '}';
-    }
+
 }

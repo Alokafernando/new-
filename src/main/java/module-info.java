@@ -5,6 +5,7 @@ module com.business.project.project03 {
     requires javafx.graphics;
     requires java.sql;
     requires net.sf.jasperreports.core;
+    requires lombok;
 
     opens com.business.project.project03.view.tdm to javafx.base;
 

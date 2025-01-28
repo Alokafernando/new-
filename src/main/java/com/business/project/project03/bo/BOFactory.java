@@ -3,6 +3,7 @@ package com.business.project.project03.bo;
 
 import com.business.project.project03.bo.custom.impl.*;
 import com.business.project.project03.dao.custom.impl.DriverDAOImpl;
+import com.business.project.project03.dao.custom.impl.PartDetailDAOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -17,7 +18,7 @@ public class BOFactory {
     }
 
     public enum BOType {
-        CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART, STAFF, SUPPLIER, TRANSPORT, RESERVATION, PAYMENT, VEHICLE, CHECK, TAX
+    CUSTOMER, DRIVER, EXPORT_COMPANY, IMPORT_COMPANY, PART, STAFF, SUPPLIER, TRANSPORT, RESERVATION, PAYMENT, VEHICLE, CHECK, TAX, PART_DETAIL, SUPPLY_DETAIL
     }
 
     public SuperBO getBO(BOType type) {
@@ -48,6 +49,10 @@ public class BOFactory {
                 return new CheckBOImpl();
             case TAX:
                 return new TaxBOImpl();
+            case PART_DETAIL:
+                return new PartDetailBOImpl();
+            case SUPPLY_DETAIL:
+                return new SupplyDetailBOImpl();
             default:
                 return null;
         }

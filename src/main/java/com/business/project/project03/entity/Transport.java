@@ -40,15 +40,6 @@ public class Transport implements Serializable {
 
     public void setDriver_id(String driver_id) {this.driver_id = driver_id;}
 
-    @Override
-    public String toString() {
-        return "TransportDTO{" +
-                "transport_id='" + transport_id + '\'' +
-                ", transport_type='" + transport_type + '\'' +
-                ", start_date='" + start_date + '\'' +
-                ", end_date='" + end_date + '\'' +
-                ", driver_id='" + driver_id + '\'' +
-                '}';
-    }
+
 
 }

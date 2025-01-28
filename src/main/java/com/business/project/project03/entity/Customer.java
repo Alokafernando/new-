@@ -62,14 +62,4 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "CustomerDTO{" +
-                "id='" + cust_ID + '\'' +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }

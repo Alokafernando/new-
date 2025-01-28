@@ -40,14 +40,5 @@ public class ExportCompany implements Serializable {
 
     public void setEmail(String email) {this.email = email;}
 
-    @Override
-    public String toString() {
-        return "ExportCompanyTM" +
-                "id='" + company_ID + '\'' +
-                ", name='" + company_Name + '\'' +
-                ", country='" + country + '\'' +
-                ", contact='" + contact + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
+
 }

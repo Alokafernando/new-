@@ -48,4 +48,14 @@ public class SupplierBOImpl implements SupplierBO {
     public void generateReport() throws SQLException, ClassNotFoundException {
         supplierDAO.generateReport();
     }
+
+    @Override
+    public ArrayList<String> getSupplierIDs() throws SQLException, ClassNotFoundException {
+        return supplierDAO.getSupplierIDs();
+    }
+
+    @Override
+    public SupplierDTO findById(String selectedSupplierID) throws SQLException, ClassNotFoundException {
+        return supplierDAO.findById(selectedSupplierID);
+    }
 }

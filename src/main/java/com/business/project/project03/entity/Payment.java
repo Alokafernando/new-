@@ -49,16 +49,5 @@ public class Payment {
 
     public void setStatus(String status) {this.status = status;}
 
-    @Override
-    public String toString() {
-        return "PaymentDTO{" +
-                "reservation_id='" + reservation_id + '\'' +
-                ", pay_id='" + pay_id + '\'' +
-                ", payment_method='" + payment_method + '\'' +
-                ", deposite=" + deposite +
-                ", amount=" + amount +
-                ", remain_amount=" + remain_amount +
-                ", status='" + status + '\'' +
-                '}';
-    }
+
 }

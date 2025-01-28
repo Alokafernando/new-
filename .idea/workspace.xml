@@ -5,10 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fa9c1d3-511e-43ae-a327-5ecccccce955" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/model/PartDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/view/tdm/PartDetailTM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/TaxBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/TaxBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/TaxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/controller/TaxController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/TaxDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/TaxDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/BOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/PartBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/PartBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/SupplierBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/SupplierBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/PartBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/PartBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/SupplierBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/bo/custom/impl/SupplierBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/PartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/PartDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/PartDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/dao/custom/impl/PartDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/ExportCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/ExportCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/ImportCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/ImportCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Part.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Tax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Tax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/business/project/project03/entity/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplyDetailsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplyDetailsView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +103,9 @@
       <recent name="C:\ijse\Hyber\Project 03\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.business.project.project03.entity" />
       <recent name="com.business.project.project03.model" />
+      <recent name="com.business.project.project03.view.tdm" />
+      <recent name="com.business.project.project03.entity" />
     </key>
   </component>
   <component name="RunManager">
@@ -132,7 +155,7 @@
       <workItem from="1737554851593" duration="40955000" />
       <workItem from="1737772755409" duration="19000" />
       <workItem from="1737806723285" duration="15971000" />
-      <workItem from="1737844689882" duration="15744000" />
+      <workItem from="1737844689882" duration="34716000" />
     </task>
     <servers />
   </component>

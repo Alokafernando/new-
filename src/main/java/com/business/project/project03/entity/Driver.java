@@ -27,11 +27,5 @@ public class Driver implements Serializable {
 
     public void setContact(String contact) {this.contact = contact;}
 
-    @Override
-    public String toString() {
-        return "id='" + driver_id + '\'' +
-                ", name='" + name + '\'' +
-                ", contact='" + contact + '\''+
-                '}';
-    }
+
 }
