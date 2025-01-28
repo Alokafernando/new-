@@ -10,11 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface PartDetailBO extends SuperBO {
-    boolean placeOrder(String partId, String vevhicle, List<PartDetailDTO> partDetailDTOS) throws SQLException, ClassNotFoundException ;
-    ArrayList<PartDTO> getAllPartsIds() throws SQLException, ClassNotFoundException;
+    boolean placeOrder(List<PartDetailDTO> partDetailDTOS) throws SQLException, ClassNotFoundException ;
     PartDTO searchPart(String partId) throws SQLException, ClassNotFoundException;
+    PartDTO findPart(String partId) throws SQLException, ClassNotFoundException;
+    VehicleDTO findVehicle(String vehicleId) throws SQLException, ClassNotFoundException;
+    ArrayList<PartDTO> getAllPartIds() throws SQLException, ClassNotFoundException;
     ArrayList<VehicleDTO> getAllVehicleIds() throws SQLException, ClassNotFoundException;
-    VehicleDTO searchVehicle(String vehicleId) throws SQLException, ClassNotFoundException;
-    String generatePartAddingID()  throws SQLException, ClassNotFoundException;
-
 }

@@ -80,8 +80,6 @@ public class SupplyDetailBOImpl implements SupplyDetailBO {
 
     @Override
     public SupplierDTO findSupplier(String supplierId) throws SQLException, ClassNotFoundException {
-//        Supplier supplierDTO = supplierDAO.findById(supplierId);
-//        return new SupplierDTO(supplierDTO.getSupplier_id(), supplierDTO.getName(), supplierDTO.getContact(), supplierDTO.getEmail());
         SupplierDTO supplier = supplierDAO.findById(supplierId);
         return new SupplierDTO(supplier.getSupplier_id(), supplier.getName(), supplier.getContact(), supplier.getEmail());
     }
