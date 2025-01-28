@@ -9,8 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 
-
-public class SupplyDetailTM {
+public class SupplyDetailTM implements Comparable<SupplyDetailTM> {
 
         private String partId;
         private String partName;
@@ -21,4 +20,8 @@ public class SupplyDetailTM {
 
 
 
+        @Override
+        public int compareTo(SupplyDetailTM o) {
+                return partId.compareTo(o.partId);
+        }
 }

@@ -22,42 +22,42 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
-    //cust_ID
     public String getCust_ID() {
         return cust_ID;
     }
+
     public void setCust_ID(String cust_ID) {
         this.cust_ID = cust_ID;
     }
 
-    //Name
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    //Address
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
 
-    //Contact
     public String getContact() {
         return contact;
     }
+
     public void setContact(String contact) {
         this.contact = contact;
     }
 
-    //Email
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
