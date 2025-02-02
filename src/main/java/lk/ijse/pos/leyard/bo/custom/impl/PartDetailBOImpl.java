@@ -2,6 +2,7 @@ package lk.ijse.pos.leyard.bo.custom.impl;
 
 import lk.ijse.pos.leyard.bo.custom.PartDetailBO;
 import lk.ijse.pos.leyard.dao.DAOFactory;
+import lk.ijse.pos.leyard.dao.SQLUtil;
 import lk.ijse.pos.leyard.dao.custom.PartDAO;
 import lk.ijse.pos.leyard.dao.custom.PartDetailDAO;
 import lk.ijse.pos.leyard.dao.custom.VehicleDAO;
@@ -32,16 +33,13 @@ public class PartDetailBOImpl implements PartDetailBO {
             connection.setAutoCommit(false);
 
             for (PartDetailDTO dto : partDetailDTOS) {
-//                boolean isSaved = SQLUtil.execute(
-//                        "insert into supplier_details values (?,?,?,?,?)",
-//                        dto.getSupplier_id(),
+//                boolean isSaved = SQLUtil.execute("insert into part_details values(?,?,?,?);",
 //                        dto.getPart_id(),
-//                        dto.getSupply_date(),
+//                        dto.getVehicle_id(),
 //                        dto.getQuantity(),
-//                        dto.getTotal()
-//                );
+//                        dto.getPrice());
 
-                boolean isSaved = partDetailDAO.save(new PartDetail());
+               boolean isSaved = partDetailDAO.save(new PartDetail(dto.getPart_id(), dto.getVehicle_id(), dto.getQuantity(), dto.getPrice()));
 
                 if (!isSaved) {
                     connection.rollback();

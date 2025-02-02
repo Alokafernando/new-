@@ -8,6 +8,16 @@ public class SupplyDetails {
     private int quantity;
     private double total;
 
+    public SupplyDetails() {}
+
+    public SupplyDetails(String supplier_id, String part_id, String supply_date, int quantity, double total) {
+        this.supplier_id = supplier_id;
+        this.part_id = part_id;
+        this.supply_date = supply_date;
+        this.quantity = quantity;
+        this.total = total;
+    }
+
     public String getSupplier_id() {return supplier_id;}
 
     public void setSupplier_id(String supplier_id) {this.supplier_id = supplier_id;}

@@ -2,6 +2,7 @@ package lk.ijse.pos.leyard.bo.custom.impl;
 
 import lk.ijse.pos.leyard.bo.custom.SupplyDetailBO;
 import lk.ijse.pos.leyard.dao.DAOFactory;
+import lk.ijse.pos.leyard.dao.SQLUtil;
 import lk.ijse.pos.leyard.dao.custom.PartDAO;
 import lk.ijse.pos.leyard.dao.custom.SupplierDAO;
 import lk.ijse.pos.leyard.dao.custom.SupplyDetailDAO;
@@ -40,7 +41,7 @@ public class SupplyDetailBOImpl implements SupplyDetailBO {
 //                        dto.getTotal()
 //                );
 
-                boolean isSaved = supplyDetailDAO.save(new SupplyDetails());
+                boolean isSaved = supplyDetailDAO.save(new SupplyDetails(dto.getSupplier_id(), dto.getPart_id(), dto.getSupply_date(), dto.getQuantity(), dto.getTotal()));
 
                 if (!isSaved) {
                     connection.rollback();

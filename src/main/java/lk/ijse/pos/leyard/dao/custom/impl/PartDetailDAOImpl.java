@@ -21,6 +21,7 @@ public class PartDetailDAOImpl implements PartDetailDAO {
                 entity.getVehicle_id(),
                 entity.getQuantity(),
                 entity.getPrice());
+
     }
 
     @Override
